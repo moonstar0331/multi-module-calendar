@@ -1,0 +1,5 @@
+rootProject.name = 'multi-module-calendar'
+include 'calendar-core'
+include 'calendar-api'
+include 'calendar-batch'
+
