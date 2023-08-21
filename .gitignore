@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+#calendar-api/src/main/resources/application.yml
+application.yml
