@@ -20,9 +20,10 @@ public class AuthUserResolver implements HandlerMethodArgumentResolver {
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
         final Long userId = (Long) webRequest.getAttribute(LOGIN_SESSION_KEY, WebRequest.SCOPE_SESSION);
-        if (userId == null) {
+        if (userId != null) {
+            return AuthUser.of(userId);
+        } else {
             throw new RuntimeException("bad request. no session");
         }
-        return AuthUser.of(userId);
     }
 }

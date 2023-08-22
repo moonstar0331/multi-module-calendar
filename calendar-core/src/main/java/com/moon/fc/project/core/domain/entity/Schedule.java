@@ -26,7 +26,7 @@ public class Schedule extends BaseEntity {
     @ManyToOne
     private User writer;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(value = EnumType.STRING)
     private ScheduleType scheduleType;
 
     public static Schedule event(String title, String description, LocalDateTime startAt, LocalDateTime endAt, User writer) {

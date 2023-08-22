@@ -20,6 +20,6 @@ public class FakeAuthUserResolver implements HandlerMethodArgumentResolver {
         if (userIdStr == null) {
             return new AuthUserResolver().resolveArgument(parameter, mavContainer, webRequest, binderFactory);
         }
-        return AuthUser.of(Long.getLong(userIdStr));
+        return AuthUser.of(Long.parseLong(userIdStr));
     }
 }
