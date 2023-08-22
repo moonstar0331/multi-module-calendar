@@ -1,5 +1,6 @@
 package com.moon.fc.project.core.domain.entity;
 
+import com.moon.fc.project.core.util.Encryptor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,5 +24,9 @@ public class User extends BaseEntity {
         this.email = email;
         this.password = password;
         this.birthday = birthday;
+    }
+
+    public boolean isMatch(Encryptor encryptor, String password) {
+        return encryptor.isMatch(password, this.password);
     }
 }
