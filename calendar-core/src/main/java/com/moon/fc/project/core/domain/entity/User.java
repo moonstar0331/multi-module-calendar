@@ -1,6 +1,7 @@
 package com.moon.fc.project.core.domain.entity;
 
 import com.moon.fc.project.core.util.Encryptor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@Builder
 @Getter
 @NoArgsConstructor
 @Table(name = "users")
