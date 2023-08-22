@@ -2,8 +2,10 @@ package com.moon.fc.project.api.controller;
 
 import com.moon.fc.project.api.dto.AuthUser;
 import com.moon.fc.project.api.dto.EventCreateReq;
+import com.moon.fc.project.api.dto.NotificationCreateReq;
 import com.moon.fc.project.api.dto.TaskCreateReq;
 import com.moon.fc.project.api.service.EventService;
+import com.moon.fc.project.api.service.NotificationService;
 import com.moon.fc.project.api.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,7 @@ public class ScheduleController {
 
     private final TaskService taskService;
     private final EventService eventService;
+    private final NotificationService notificationService;
 
     @PostMapping("/tasks")
     public ResponseEntity<Void> createTask(
@@ -33,6 +36,14 @@ public class ScheduleController {
             @RequestBody EventCreateReq eventCreateReq,
             AuthUser authUser) {
         eventService.create(eventCreateReq, authUser);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/notifications")
+    public ResponseEntity<Void> createNotifications(
+            @RequestBody NotificationCreateReq notificationCreateReq,
+            AuthUser authUser) {
+        notificationService.create(notificationCreateReq, authUser);
         return ResponseEntity.ok().build();
     }
 }
