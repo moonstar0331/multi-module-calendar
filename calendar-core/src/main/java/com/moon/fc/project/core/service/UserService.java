@@ -1,4 +1,4 @@
-package com.moon.fc.project.core.domain.service;
+package com.moon.fc.project.core.service;
 
 import com.moon.fc.project.core.domain.entity.User;
 import com.moon.fc.project.core.domain.entity.repository.UserRepository;

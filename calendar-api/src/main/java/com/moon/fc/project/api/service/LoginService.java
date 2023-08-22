@@ -3,7 +3,7 @@ package com.moon.fc.project.api.service;
 import com.moon.fc.project.api.dto.LoginReq;
 import com.moon.fc.project.api.dto.SignUpReq;
 import com.moon.fc.project.core.domain.entity.User;
-import com.moon.fc.project.core.domain.service.UserService;
+import com.moon.fc.project.core.service.UserService;
 import com.moon.fc.project.core.dto.UserCreateReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
